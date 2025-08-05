@@ -15,5 +15,9 @@ public class Main {
 
         em.getTransaction().begin();
         em.persist(em);
+        em.getTransaction().commit();
+
+        em.close();
+        emf.close();
     }
 }
