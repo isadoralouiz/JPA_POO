@@ -7,6 +7,7 @@ import jakarta.persistence.Persistence;
 public class Main {
     public static void main(String[] args) {
 
+        Documento documento = new Documento("doc", "ssp");
         Pessoa p1 = new Pessoa();
         p1.setNome("Ana");
 
@@ -28,5 +29,8 @@ public class Main {
         emf.close();
 
         System.out.println("Pessoa salva com sucesso!");
+
+
+
     }
 }
