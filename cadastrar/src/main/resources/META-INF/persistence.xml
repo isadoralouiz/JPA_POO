@@ -10,7 +10,7 @@
       <property name="jakarta.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
       
       <!-- URL de conexão com o banco MySQL na porta 3306 e banco 'aula' -->
-      <property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/aula"/>
+      <property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://localhost:3306"/>
       
       <!-- Usuário do banco -->
       <property name="jakarta.persistence.jdbc.user" value="aluno"/>
