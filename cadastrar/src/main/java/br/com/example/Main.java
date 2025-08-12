@@ -12,7 +12,7 @@ public class Main {
         Documento documento = new Documento("doc", "ssp");
 
         Pessoa p1 = new Pessoa();
-      
+        p1.setDocumento(documento);
 
         // Cria o EntityManagerFactory com base na unidade de persistência 'meuPU'
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("meuPU");

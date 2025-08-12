@@ -1,13 +1,27 @@
 package br.com.example;
 
-public class Telefone {
-    
-    private Long id;
-    private String nome;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 
-    public Telefone(Long id, String nome) {
-        this.id = id;
-        this.nome = nome;
+public class Telefone {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private String numero;
+
+    @ManyToOne
+    @JoinColumn(name = "pessoa_id")
+
+    private Pessoa pessoa;
+
+    public Telefone(String numero, Pessoa pessoa) {
+        this.numero = numero;
+        this.pessoa = pessoa;
+    }
+    public Telefone() {
     }
 
     public Long getId() {
@@ -16,10 +30,17 @@ public class Telefone {
     public void setId(Long id) {
         this.id = id;
     }
-    public String getNome() {
-        return nome;
+    public String getNumero() {
+        return numero;
     }
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setNumero(String numero) {
+        this.numero = numero;
     }
+    public Pessoa getPessoa() {
+        return pessoa;
+    }
+    public void setPessoa(Pessoa pessoa) {
+        this.pessoa = pessoa;
+    }
+
 }
