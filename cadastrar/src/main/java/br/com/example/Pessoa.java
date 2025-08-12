@@ -10,9 +10,15 @@ public class Pessoa {
     private Long id;
     private String nome;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "documento_id", referencedColumnName = "id")
     private Documento documento;
+
+    public Pessoa(String nome, Documento documento) {
+    this.nome = nome;
+    this.documento = documento;
+    }
+
 
     public Documento getDocumento() {
         return documento;
